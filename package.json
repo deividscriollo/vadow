@@ -1,0 +1,23 @@
+{
+  "name": "vadow",
+  "version": "1.0.0",
+  "description": "Desarrollo Administracion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deividscriollo/vadow.git"
+  },
+  "author": "vadow",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/deividscriollo/vadow/issues"
+  },
+  "homepage": "https://github.com/deividscriollo/vadow#readme",
+  "dependencies": {
+    "angular": "^1.6.6"
+  }
+}
