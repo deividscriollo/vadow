@@ -41,4 +41,4 @@ localhost/vadow
 
 ## License
 
-UNLICENSED, este proyecto es privado.
+UNLICENSED, proyecto privado.
