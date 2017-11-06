@@ -1,0 +1,254 @@
+<div class="main-content">	
+	<div class="main-content-inner">
+	    <div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+				try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="breadcrumb">
+				<li>
+					<i class="ace-icon fa fa-home home-icon"></i>
+					<a href="#/">Inicio</a>
+				</li>
+
+				<li class="active">Empresa</li>
+				<li class="active">Registro Empresa</li>
+			</ul>
+		</div>
+
+	    <div class="page-content">
+			<div class="row">
+				<div class="col-sm-12">
+					<form class="form-horizontal" name="form_empresa" id="form_empresa" autocomplete="off">
+						<div class="row">
+							<div class="widget-box">
+								<div class="widget-body">
+									<div class="widget-header">
+										<h4 class="widget-title">Información Básica</h4>
+									</div>
+									&nbsp;
+
+									<div class="widget-main">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">RUC Empresa::</label>
+														<div class="col-sm-4">
+															<div class="clearfix">
+																<input type="text" name="ruc" id="ruc" class="form-control" placeholder="Consultar..." />
+																<input type="hidden" name="id" id="id" class="form-control" />
+															</div>
+														</div>
+														<button class="btn btn-pink btn-sm" id="btn_verificar" type="button" onclick="angular.element(this).scope().cargadatos('estado')"><i class="ace-icon fa fa-search"></i></button>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Nombre Comercial:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="nombre_comercial" id="nombre_comercial" placeholder="Nombre Comercial" class="form-control" onkeyup="this.value = this.value.toUpperCase();" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Representante Legal:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="representante_legal" id="representante_legal" class="form-control" placeholder="Representante Legal" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Teléfono:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<span class="block input-icon">
+																	<input type="text" name="telefono1" id="telefono1" class="form-control" placeholder="Teléfono" />
+																	<i class="ace-icon fa fa-phone"></i>
+													            </span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Ciudad:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="ciudad" id="ciudad" class="form-control" placeholder="Ciudad" onkeyup="this.value = this.value.toUpperCase();" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Dirección Establecimiento:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="direccion_establecimiento" id="direccion_establecimiento" class="form-control" placeholder="Dirección Establecimiento" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Punto Emisión:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="punto_emision" id="punto_emision" maxlength="3" class="form-control" placeholder="Punto Emisión" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Sitio Web:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<span class="block input-icon">
+																	<input type="text" name="sitio_web" id="sitio_web" class="form-control" placeholder="Sitio Web" />
+																	<i class="ace-icon fa fa-globe"></i>
+													            </span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Observaciones:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<textarea name="observaciones" id="observaciones" class="form-control" placeholder="Observaciones"></textarea>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Razón Social:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="razon_social" id="razon_social" class="form-control" placeholder="Razón Social" onkeyup="this.value = this.value.toUpperCase();" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Actividad Económica:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="actividad_economica" id="actividad_economica" class="form-control" placeholder="Actividad Económica" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Identificación Representante:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="identificacion_representante" id="identificacion_representante" placeholder="Identificación Representante" class="form-control" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Celular:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<span class="block input-icon">
+																	<input type="text" name="telefono2" id="telefono2" class="form-control" placeholder="Celular" />
+																	<i class="ace-icon fa fa-mobile"></i>
+													            </span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Dirección Matriz:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="direccion_matriz" id="direccion_matriz" class="form-control" placeholder="Dirección Matriz" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Establecimiento:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="establecimiento" id="establecimiento" maxlength="3" class="form-control" placeholder="Establecimiento" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Correo:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<span class="block input-icon">
+																	<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo" />
+																	<i class="ace-icon fa fa-envelope"></i>
+													            </span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Slogan:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="slogan" id="slogan" class="form-control" placeholder="Slogan" />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="clearfix form-actions center">
+								<div class="col-md-12">
+									<button type="button" name="btn_0" id="btn_0" class="btn btn-primary" data-toggle="tooltip" title="Registrar Empresa">
+										<i class="ace-icon fa fa-save bigger-110"></i>
+										Guardar
+									</button>
+
+									<button type="button" name="btn_1" id="btn_1" class="btn btn-primary" data-toggle="tooltip" title="Modificar Empresa">
+										<i class="ace-icon fa fa-pencil-square-o bigger-110"></i>
+										Modificar
+									</button>
+
+									<button type="button" name="btn_3" id="btn_3" class="btn btn-primary" data-toggle="tooltip" title="Limpiar">
+										<i class="ace-icon fa fa-refresh bigger-110"></i>
+										Actualizar
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal">
+    <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	        <div class="modal-header">
+	          	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	          	<h4 class="modal-title">BUSCAR EMPRESA</h4>
+	        </div>
+
+	        <div class="modal-body">
+	            <table id="table"></table>
+				<div id="pager"></div>
+	        </div>
+
+	        <div class="modal-footer">
+	          	<button type="button" class="btn btn-success" data-dismiss="modal" data-toggle="tooltip" title="Cerrar ventana">Cerrar</button>
+	        </div>
+	    </div>
+    </div>
+</div>

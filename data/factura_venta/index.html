@@ -1,0 +1,567 @@
+<div class="main-content">	
+	<div class="main-content-inner">
+	    <div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+				try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="breadcrumb">
+				<li>
+					<i class="ace-icon fa fa-home home-icon"></i>
+					<a href="#/">Inicio</a>
+				</li>
+
+				<li class="active">Factura Venta</li>
+				<li class="active">Nueva Factura Venta</li>
+			</ul>
+		</div>
+
+	    <div class="page-content">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="space"></div>
+					<form class="form-horizontal" name="form_factura" id="form_factura" autocomplete="off">
+						<div class="tabbable">
+							<ul class="nav nav-tabs padding-16">
+								<li ng-class="{ active: isSet(1)}">
+									<a data-toggle="tab" href ng-click="setTab(1)">
+										<i class="green ace-icon fa fa-pencil-square-o bigger-125"></i>
+										FACTURA VENTA
+									</a>
+								</li>
+							</ul>
+
+							<div class="tab-content profile-edit-tab-content" >
+								<div ng-show="isSet(1)">
+									<div class="row">
+										&nbsp; 
+										<div class="col-sm-12">
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="fecha_actual">FECHA ACTUAL.:</label>
+													<div class="col-sm-6">
+														<div class="input-group">
+															<input type="text" name="fecha_actual" id="fecha_actual" class="form-control datepicker" readonly />
+															<span class="input-group-addon">
+																<i class="ace-icon fa fa-calendar"></i>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="control-label col-sm-4 no-padding-right">Hora Actual.:</label>
+													<div class="col-sm-6">
+										                <div class="input-group">
+										                    <input type="text" name="hora_actual" id="hora_actual" class="form-control" readonly />
+										                    <span class="input-group-addon">
+										                        <i class="glyphicon glyphicon-time"></i>
+										                    </span>
+										                </div>
+										            </div>
+									            </div>
+											</div>
+
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="ruc">FACTURA PREIMPRESA.:</label>
+													<div class="col-sm-6">
+														<input type="text" name="serie" id="serie" class="form-control" />
+													</div>
+												</div>
+											</div>	
+										</div>
+									</div>
+
+									<div class="row">	
+										<div class="col-sm-12">
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="control-label col-sm-4 no-padding-right">RUC/CI.:</label>
+													<div class="col-sm-6">
+														<div class="clearfix">
+															<input type="text" name="ruc" id="ruc" class="form-control" placeholder="Buscar..." />
+															<input type="hidden" name="id_cliente" id="id_cliente" class="form-control" />
+															<input type="hidden" name="id_factura" id="id_factura" class="form-control" />
+															<input type="hidden" name="id_nota" id="id_nota" class="form-control" />
+															<input type="hidden" name="id_proforma" id="id_proforma" class="form-control" />
+														</div>
+													</div>
+													<button type="button" name="btn_verificar" id="btn_verificar" class="btn btn-pink btn-sm" onclick="angular.element(this).scope().cargadatos('estado')"><i class="ace-icon fa fa-search"></i></button>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="telefono">TELÉFONO.:</label>
+													<div class="col-sm-6">
+														<input type="text" name="telefono" id="telefono" class="form-control" readonly />
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="select_tipo_comprobante">TIPO COMPROBANTE.:</label>
+													<div class="col-sm-6">
+														<select name="select_tipo_comprobante" id="select_tipo_comprobante" class="select2" data-placeholder="Tipo Comprobante...">
+														</select>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="cliente">NOMBRES COMPLETOS.:</label>
+													<div class="col-sm-8">
+														<input type="text" name="cliente" id="cliente" class="form-control" placeholder="Buscar..." />
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="correo">CORREO.:</label>
+													<div class="col-sm-8">
+														<input type="text" name="correo" id="correo" class="form-control" readonly />
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="select_forma_pago">FORMA PAGO.:</label>
+													<div class="col-sm-6">
+														<select name="select_forma_pago" id="select_forma_pago" class="select2" data-placeholder="Forma Pago...">
+															<option value="CONTADO" selected>CONTADO</option>
+															<!-- <option value="CRÉDITO">CRÉDITO</option> -->
+														</select>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="direccion">DIRECCIÓN.:</label>
+													<div class="col-sm-8">
+														<input type="text" name="direccion" id="direccion" class="form-control" readonly />
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="select_tipo_precio">TIPO PRECIO:</label>
+													<div class="col-sm-6">
+														<select name="select_tipo_precio" id="select_tipo_precio" class="select2" data-placeholder="Tipo Precio...">
+															<option value="MINORISTA" selected>MINORISTA</option>
+															<option value="MAYORISTA">MAYORISTA</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div id="estado" style="margin-top: -10px"><h3></h3></div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-12">
+											<h3 class="header smaller lighter blue">DETALLE FACTURA VENTA</h3>
+											<div class="row">
+												<div class="col-sm-9">
+													<div class="col-sm-2">
+														<div class="row">
+															<div class="col-xs-12">
+																<label> CÓDIGO BARRAS</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="codigo_barras" id="codigo_barras" class="form-control"  placeholder="Buscar......" />
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-2">
+														<div class="row">
+															<div class="col-xs-12">
+																<label> CÓDIGO</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="codigo" id="codigo" class="form-control" placeholder="Buscar......" />
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="row">
+															<div class="col-xs-12">
+																<label> DESCRIPCIÓN</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="producto" id="producto" class="form-control" placeholder="Buscar......" /> 
+															</div>
+														</div>
+													</div>
+
+													<div class="col-xs-1">
+														<div class="row">
+															<div class="col-sm-12">
+																<label> CANTIDAD</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="cantidad" id="cantidad" class="form-control" /> 
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-1">
+														<div class="row">
+															<div class="col-sm-12">
+																<label> PRECIO</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="precio_venta" id="precio_venta" class="form-control" />
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-1">
+														<div class="row">
+															<div class="col-sm-12">
+																<label> DESCUENTO</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="descuento" id="descuento" class="form-control" readonly />  
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-1">
+														<div class="row">
+															<div class="col-sm-12">
+																<label>STOCK</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="stock" id="stock" class="form-control" readonly />
+																<input type="hidden" name="id_producto"  id="id_producto" class="form-control" />
+																<input type="hidden" name="precio_costo" id="precio_costo" class="form-control" />
+								                                <input type="hidden" name="iva_producto" id="iva_producto" class="form-control" />
+								                                <input type="hidden" name="incluye" id="incluye" class="form-control" />
+															</div>
+														</div>
+													</div>
+												</div>	
+											</div>
+											&nbsp; &nbsp;
+											
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="col-sm-9">	
+														<div id="grid_container">
+															<table id="table"></table>
+															<!-- <div id="pager"></div>	 -->
+														</div>	
+													</div>
+
+													<div class="col-sm-3">
+							                            <div class="form-group">
+															<label class="col-md-5">SUBTOTAL:</label>
+															<div class="col-md-7">
+																<span class="input-icon">
+																	<input type="text" name="subtotal" id="subtotal" class="form-control" value="0.000" readonly />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+																</span>
+															</div>
+														</div>
+
+														 <div class="form-group">
+							                                <label class="col-md-5">TARIFA 14%:</label>
+							                                <div class="col-md-7">
+							                                	<span class="input-icon">
+																	<input type="text" name="tarifa" id="tarifa" class="form-control" value="0.000" readonly />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+																</span>                                
+							                                </div> 
+							                            </div>
+
+							                            <div class="form-group">
+							                                <label class="col-md-5">TARIFA 0%:</label>
+							                                <div class="col-md-7">
+							                                	<span class="input-icon">
+																	<input type="text" name="tarifa_0" id="tarifa_0" class="form-control" value="0.000" readonly />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+																</span>                                
+							                                </div> 
+							                            </div>
+
+							                            <div class="form-group">
+							                                <label class="col-md-5">IVA:</label>
+							                                <div class="col-md-7">
+							                               		<span class="input-icon">
+																	<input type="text" name="iva" id="iva" class="form-control" value="0.000" readonly />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+																</span>                               
+							                                </div> 
+							                            </div>
+
+							                            <div class="form-group">
+							                                <label class="col-md-5">DESCUENTO:</label>
+							                                <div class="col-md-7">
+							                                	<span class="input-icon">
+																	<input type="text" name="otros" id="otros" class="form-control" value="0.000" readonly />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+																</span>                               
+							                                </div> 
+							                            </div>
+
+							                            <div class="form-group">
+							                                <label class="col-md-5">TOTAL A PAGAR:</label>
+							                                <div class="col-md-7">
+							                                	<span class="input-icon">
+																	<input type="text" name="total_pagar" id="total_pagar" class="form-control" value="0.00" readonly />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+																</span>                               
+							                                </div> 
+							                            </div>
+
+							                            <div class="form-group">
+							                                <label class="col-md-5">EFECTIVO:</label>
+							                                <div class="col-md-7">
+							                                	<span class="input-icon">
+																	<input type="text" name="efectivo" id="efectivo" class="form-control" value="0.00" />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+																</span>                               
+							                                </div> 
+							                            </div>
+
+							                            <div class="form-group">
+							                                <label class="col-md-5">CAMBIO:</label>
+							                                <div class="col-md-7">
+							                                	<span class="input-icon">
+																	<input type="text" name="cambio" id="cambio" class="form-control" value="0.00" />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+																</span>                               
+							                                </div> 
+							                            </div>
+													</div>
+												</div>
+
+												<div class="col-sm-12">
+													<div class="col-sm-2">
+														<div class="row">
+															<div class="col-sm-12">
+																<label>N° ITEMS:</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="items" id="items" class="form-control" readonly value="0" /> 
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-2">
+														<div class="row">
+															<div class="col-sm-12">
+																<label>N° PRODUCTOS:</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="num" id="num" class="form-control" readonly value="0" /> 
+															</div>
+														</div>
+													</div>
+												</div>	
+											</div>
+										</div>	
+									</div>	
+								</div>
+							</div>
+						</div>
+
+						<div class="clearfix form-actions center">
+							<div class="col-md-12">
+								<button type="button" name="btn_0" id="btn_0" class="btn btn-primary" data-toggle='tooltip' title='Registrar Factura/Nota'>
+									<i class="ace-icon fa fa-save bigger-110"></i>
+									Guardar
+								</button>
+
+								<button type="button" name="btn_1" id="btn_1" class="btn btn-primary" data-toggle='tooltip' title='Modificar Factura'>
+									<i class="ace-icon fa fa-edit bigger-110"></i>
+									Modificar
+								</button>
+
+								<button type="button" class="btn btn-primary" data-toggle="modal" href="#myModal">
+									<i class="ace-icon fa fa-search bigger-110"></i>
+									Facturas Venta
+								</button>
+
+								<button type="button" class="btn btn-primary" data-toggle="modal" href="#myModal2">
+									<i class="ace-icon fa fa-search bigger-110"></i>
+									Notas Venta
+								</button>
+
+								<button type="button" class="btn btn-primary" data-toggle="modal" href="#myModal3">
+									<i class="ace-icon fa fa-search bigger-110"></i>
+									Proformas
+								</button>
+
+								<button type="button" name="btn_2" id="btn_2" class="btn btn-primary" data-toggle='tooltip' title='Anular Factura'>
+									<i class="ace-icon fa fa-close bigger-110"></i>
+									Anular
+								</button>
+
+								<button type="button" name="btn_3" id="btn_3" class="btn btn-primary" data-toggle='tooltip' title='Imprimir Factura'>
+									<i class="ace-icon fa fa-print bigger-110"></i>
+									Imprimir
+								</button>
+
+								<button type="button" name="btn_4" id="btn_4" class="btn btn-primary" data-toggle='tooltip' title='Limpiar'>
+									<i class="ace-icon fa fa-refresh bigger-110"></i>
+									Actualizar
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal">
+	    <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		        <div class="modal-header">
+		          	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		          	<h4 class="modal-title">BUSCAR FACTURAS VENTA</h4>
+		        </div>
+
+		        <div class="modal-body">
+		            <table id="table2"></table>
+					<div id="pager2"></div>
+		        </div>
+
+		        <div class="modal-footer">
+		          	<button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle='tooltip' title='Cerrar Ventana'>Cerrar</button>
+		        </div>
+		    </div>
+	    </div>
+	</div>
+
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal2">
+	    <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		        <div class="modal-header">
+		          	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		          	<h4 class="modal-title">BUSCAR NOTAS VENTA</h4>
+		        </div>
+
+		        <div class="modal-body">
+		            <table id="table3"></table>
+					<div id="pager3"></div>
+		        </div>
+
+		        <div class="modal-footer">
+		          	<button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle='tooltip' title='Cerrar Ventana'>Cerrar</button>
+		        </div>
+		    </div>
+	    </div>
+	</div>
+
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal3">
+	    <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		        <div class="modal-header">
+		          	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		          	<h4 class="modal-title">BUSCAR PROFORMAS</h4>
+		        </div>
+
+		        <div class="modal-body">
+		            <table id="table4"></table>
+					<div id="pager4"></div>
+		        </div>
+
+		        <div class="modal-footer">
+		          	<button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle='tooltip' title='Cerrar Ventana'>Cerrar</button>
+		        </div>
+		    </div>
+	    </div>
+	</div>
+
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal4">
+	    <div class="modal-dialog modal-lg">
+	      	<div class="modal-content">
+		        <div class="modal-header">
+		          	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		          	<h4 class="modal-title">FORMA PAGO</h4>
+		        </div>
+
+		        <div class="modal-body">
+		            <form class="form-horizontal" name="form_registro" id="form_registro">
+						<div class="row">
+							&nbsp; &nbsp;
+							<div class="col-sm-12">
+								<div class="col-sm-4">
+									<div class="form-group">
+		                                <label class="col-md-4">ADELANTO:</label>
+		                                <div class="col-md-6">
+		                                	<span class="input-icon">
+												<input type="text" id="adelanto" name="adelanto" class="form-control" value="0.00" />
+												<i class="ace-icon fa fa fa-usd orange"></i>
+											</span>                                
+		                                </div> 
+		                            </div>
+								</div>
+
+								<div class="col-sm-4">
+									<div class="form-group">
+		                                <label class="col-md-3">MESES:</label>
+		                                <div class="col-md-6">
+											<input type="text" id="meses" name="meses" class="form-control" value="" />
+		                                </div> 
+		                            </div>										
+								</div>
+
+								<div class="col-sm-4">
+									<div class="form-group">
+		                                <label class="col-md-6">MONTO TOTAL:</label>
+		                                <div class="col-md-6">
+		                                	<span class="input-icon">
+												<input type="text" id="monto_total" name="monto_total" class="form-control" value="0.00" readonly />
+												<i class="ace-icon fa fa fa-usd orange"></i>
+											</span>                                
+		                                </div> 
+		                            </div>										
+								</div>
+							</div>	
+						</div>
+					</form>
+		        </div>
+
+		        <div class="modal-footer no-margin-top">
+					<button type="button" class="btn btn-sm btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" title="Cerrar ventana">
+						<i class="ace-icon fa fa-times"></i>
+						Cerrar
+					</button>
+
+					<button type="button" name="btn_confirmar" id="btn_confirmar" class="btn btn-primary pull-right" data-toggle="tooltip" title="Confirmar Forma">
+						<i class="ace-icon fa fa-save"></i>
+						Confirmar
+					</button>
+				</div>
+	      	</div>
+	    </div>
+	</div>
+</div>
+
+	
+
+

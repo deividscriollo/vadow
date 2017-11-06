@@ -1,0 +1,200 @@
+<div class="main-content">	
+	<div class="main-content-inner">
+	    <div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+				try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="breadcrumb">
+				<li>
+					<i class="ace-icon fa fa-home home-icon"></i>
+					<a href="#/">Inicio</a>
+				</li>
+
+				<li class="active">Ingesos</li>
+				<li class="active">Registro Cliente</li>
+			</ul>
+		</div>
+
+	    <div class="page-content">
+			<div class="row">
+				<div class="col-sm-12">
+					<form class="form-horizontal" name="form_clientes" id="form_clientes" autocomplete="off">
+						<div class="row">
+							<div class="widget-box">
+								<div class="widget-body">
+									<div class="widget-header">
+										<h4 class="widget-title">Información Básica</h4>
+									</div>
+									&nbsp;
+
+									<div class="widget-main">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Tipo Documento:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<select name="select_documento" id="select_documento" class="select2" data-placeholder="Seleccione tipo documento...">
+																	<option value="">&nbsp;</option>
+																	<option value="CEDULA" selected>Cédula</option>	
+																	<option value="RUC">RUC</option>	
+																	<option value="PASAPORTE">Pasaporte</option>
+																</select>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Nombres Completos:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="nombres_completos" id="nombres_completos" class="form-control" placeholder="Nombres Completos" onkeyup="this.value = this.value.toUpperCase();" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Celular:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<span class="block input-icon">
+																	<input type="text" name="telefono2" id="telefono2" class="form-control" placeholder="Celular" />
+																	<i class="ace-icon fa fa-mobile"></i>
+													            </span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Dirección:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="direccion" id="direccion" class="form-control" placeholder="Dirección" />
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Cupo Crédito:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<span class="block input-icon">
+																	<input type="text" name="cupo_credito" id="cupo_credito" class="form-control" placeholder="Cupo Crédito" value="0.00" />
+																	<i class="ace-icon fa fa fa-usd orange"></i>
+													            </span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Identificación:</label>
+														<div class="col-sm-4">
+															<div class="clearfix">
+																<input type="text" name="identificacion" id="identificacion" class="form-control" placeholder="Consultar..."  />
+																<input type="hidden" name="id_cliente" id="id_cliente" class="form-control" />
+															</div>
+														</div>
+														<button type="button" name="btn_verificar" id="btn_verificar" class="btn btn-pink btn-sm" onclick="angular.element(this).scope().cargadatos('estado')"><i class="ace-icon fa fa-search"></i></button>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Teléfono:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<span class="block input-icon">
+																	<input type="text" name="telefono1" id="telefono1" class="form-control" placeholder="Teléfono" />
+																	<i class="ace-icon fa fa-phone"></i>
+													            </span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Ciudad:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<input type="text" name="ciudad" id="ciudad" class="form-control" placeholder="Ciudad" onkeyup="this.value = this.value.toUpperCase();"/>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Correo:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<span class="block input-icon">
+																	<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo" />
+																	<i class="ace-icon fa fa-envelope"></i>
+													            </span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="control-label col-sm-4 no-padding-right">Observaciones:</label>
+														<div class="col-sm-6">
+															<div class="clearfix">
+																<textarea name="observaciones" id="observaciones" class="form-control" placeholder="Observaciones"></textarea>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="clearfix form-actions center">
+								<div class="col-md-12">
+									<button type="button" name="btn_0" id="btn_0" class="btn btn-primary" data-toggle="tooltip" title="Registrar Cliente">
+										<i class="ace-icon fa fa-save bigger-110"></i>
+										Guardar
+									</button>
+
+									<button type="button" name="btn_1" id="btn_1" class="btn btn-primary" data-toggle="tooltip" title="Modificar Cliente">
+										<i class="ace-icon fa fa-pencil-square-o bigger-110"></i>
+										Modificar
+									</button>
+
+									<button type="button" name="btn_2" id="btn_2" class="btn btn-primary" data-toggle="tooltip" title="Buscar Cliente">
+										<i class="ace-icon fa fa-search bigger-110"></i>
+										Clientes
+									</button>
+
+									<button type="button" name="btn_3" id="btn_3" class="btn btn-primary" data-toggle="tooltip" title="Limpiar">
+										<i class="ace-icon fa fa-refresh bigger-110"></i>
+										Actualizar
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal">
+    <div class="modal-dialog modal-lg">
+      	<div class="modal-content">
+	        <div class="modal-header">
+	          	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	          	<h4 class="modal-title">BUSCAR CLIENTES</h4>
+	        </div>
+
+	        <div class="modal-body">
+	            <table id="table"></table>
+				<div id="pager"></div>
+	        </div>
+	        <div class="modal-footer">
+	          	<button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" title="Cerrar ventana">Cerrar</button>
+	        </div>
+      	</div>
+    </div>
+</div>

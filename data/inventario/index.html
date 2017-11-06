@@ -1,0 +1,222 @@
+<div class="main-content">	
+	<div class="main-content-inner">
+	    <div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+				try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="breadcrumb">
+				<li>
+					<i class="ace-icon fa fa-home home-icon"></i>
+					<a href="#/">Inicio</a>
+				</li>
+
+				<li class="active">Inventario</li>
+				<li class="active">Nuevo Inventario</li>
+			</ul>
+		</div>
+
+	    <div class="page-content">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="space"></div>
+					<form class="form-horizontal" name="form_inventario" id="form_inventario" autocomplete="off">
+						<div class="tabbable">
+							<ul class="nav nav-tabs padding-16">
+								<li ng-class="{ active: isSet(1)}">
+									<a data-toggle="tab" href ng-click="setTab(1)">
+										<i class="green ace-icon fa fa-pencil-square-o bigger-125"></i>
+										INVENTARIO
+									</a>
+								</li>
+							</ul>
+
+							<div class="tab-content profile-edit-tab-content" >
+								<div ng-show="isSet(1)">
+									<div class="row">
+										&nbsp; 
+										<div class="col-sm-12">
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="col-sm-4 control-label no-padding-right" for="fecha_actual">FECHA ACTUAL.:</label>
+													<div class="col-sm-6">
+														<div class="input-group">
+															<input type="text" name="fecha_actual" id="fecha_actual" class="form-control datepicker" readonly />
+															<span class="input-group-addon">
+																<i class="ace-icon fa fa-calendar"></i>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="control-label col-sm-4 no-padding-right">HORA ACTUAL.:</label>
+													<div class="col-sm-6">
+										                <div class="input-group">
+										                    <input type="text" name="hora_actual" id="hora_actual" class="form-control" readonly />
+										                    <span class="input-group-addon">
+										                        <i class="glyphicon glyphicon-time"></i>
+										                    </span>
+										                </div>
+										            </div>
+									            </div>
+											</div>	
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-12">
+											<h3 class="header smaller lighter blue">DETALLE INVENTARIO</h3>
+											<div class="row">
+												<div class="col-sm-9">
+													<div class="col-sm-2">
+														<div class="row">
+															<div class="col-xs-12">
+																<label> CÓDIGO BARRAS</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="codigo_barras" id="codigo_barras" class="form-control"  placeholder="Buscar......" />
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-2">
+														<div class="row">
+															<div class="col-xs-12">
+																<label> CÓDIGO</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="codigo" id="codigo" class="form-control" placeholder="Buscar......" />
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="row">
+															<div class="col-xs-12">
+																<label> DESCRIPCIÓN</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="producto" id="producto" class="form-control" placeholder="Buscar......" /> 
+															</div>
+														</div>
+													</div>
+
+													<div class="col-xs-1">
+														<div class="row">
+															<div class="col-sm-12">
+																<label> CANTIDAD</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="cantidad" id="cantidad" class="form-control" /> 
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-1">
+														<div class="row">
+															<div class="col-sm-12">
+																<label> PRECIO</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="precio_venta" id="precio_venta" class="form-control" readonly /> 
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-1">
+														<div class="row">
+															<div class="col-sm-12">
+																<label> STOCK</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="stock" id="stock" class="form-control" readonly />
+																<input type="hidden" name="id_producto" id="id_producto" class="form-control" />
+																<input type="hidden" name="precio_costo" id="precio_costo" class="form-control" />
+																<input type="hidden" name="descuento" id="descuento" class="form-control" />
+								                                <input type="hidden" name="iva_producto" id="iva_producto" class="form-control" />
+								                                <input type="hidden" name="incluye" id="incluye" class="form-control" />  
+															</div>
+														</div>
+													</div>
+												</div>	
+											</div>
+											&nbsp; &nbsp;
+											
+											<div class="row">
+												<div class="col-sm-12">
+													<div id="grid_container">
+														<table id="table"></table>
+														<!-- <div id="pager"></div>	 -->
+													</div>	
+												</div>
+
+												<div class="col-sm-12">
+													<div class="col-sm-2">
+														<div class="row">
+															<div class="col-sm-12">
+																<label> Total Precio Costo:</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="total_costo" id="total_costo" class="form-control" readonly /> 
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-2">
+														<div class="row">
+															<div class="col-sm-12">
+																<label> Total Precio Venta:</label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" name="total_venta" id="total_venta" class="form-control" readonly /> 
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>	
+									</div>	
+								</div>
+							</div>
+						</div>
+
+						<div class="clearfix form-actions center">
+							<div class="col-md-12">
+								<button type="button" name="btn_0" id="btn_0" class="btn btn-primary" data-toggle='tooltip' title='Registar Inventario'>
+									<i class="ace-icon fa fa-save bigger-110"></i>
+									Guardar
+								</button>
+
+								<button type="button" name="btn_4" id="btn_4" class="btn btn-primary" data-toggle='tooltip' title='Limpiar'>
+									<i class="ace-icon fa fa-refresh bigger-110"></i>
+									Actualizar
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+
+

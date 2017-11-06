@@ -1,0 +1,187 @@
+<div class="main-content">	
+	<div class="main-content-inner">
+	    <!-- <div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+				try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="breadcrumb">
+				<li>
+					<i class="ace-icon fa fa-home home-icon"></i>
+					<a href="#/">Inicio</a>
+				</li>
+
+				<li class="active">Ingesos</li>
+				<li class="active">Usuarios</li>
+			</ul>
+
+			<div class="nav-search" id="nav-search">
+				<form class="form-search">
+					<span class="input-icon">
+						<input type="text" placeholder="Buscar ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+						<i class="ace-icon fa fa-search nav-search-icon"></i>
+					</span>
+				</form>
+			</div>
+		</div> -->
+
+	    <div class="page-content">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="well well-sm">
+						<h3 class=" center red">MI CUENTA</h3>
+					</div>
+
+					<!-- <form class="form-horizontal" name="form_usuarios" id="form_usuarios"> -->
+						<div class="tabbable">
+							<!-- <ul class="nav nav-tabs padding-16">
+								<li class="active">
+									<a data-toggle="tab" href="">
+										<i class="green ace-icon fa fa-pencil-square-o bigger-125"></i>
+										Información Básica
+									</a>
+								</li>
+							</ul> -->
+
+							<div class="tab-content profile-edit-tab-content">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="space-12"></div>
+										<div>
+											<div id="user-profile-1" class="user-profile row">
+												<div class="col-xs-12 col-sm-3 center">
+													<div>
+														<span class="profile-picture">
+															<img id="avatar" class="editable img-responsive" alt="Alex's Avatar" src="dist/avatars/profile-pic.jpg" />
+														</span>
+
+														<div class="space-4"></div>
+
+														<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+															<div class="inline position-relative">
+																<a href="" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+																	<i class="ace-icon fa fa-circle light-green"></i>
+																	&nbsp;
+																	<span class="white">{{nombres}}</span>
+																</a>
+															</div>
+														</div>
+													</div>
+
+													<div class="space-6"></div>
+													<div class="hr hr12 dotted"></div>
+												</div>
+
+												<div class="col-xs-12 col-sm-6">
+													<div class="profile-user-info profile-user-info-striped">
+														<div class="profile-info-row">
+															<div class="profile-info-name"> Identificación </div>
+
+															<div class="profile-info-value">
+																<span class="editable" id="identificacion">{{identificacion}}</span>
+															</div>
+														</div>
+
+														<div class="profile-info-row">
+															<div class="profile-info-name"> Nombres</div>
+
+															<div class="profile-info-value">
+																<span class="editable" id="nombres">{{nombres}}</span>
+															</div>
+														</div>
+
+														<div class="profile-info-row">
+															<div class="profile-info-name"> Teléfono</div>
+
+															<div class="profile-info-value">
+																<span class="editable" id="telefono">{{telefono}}</span>
+															</div>
+														</div>
+
+														<div class="profile-info-row">
+															<div class="profile-info-name"> Celular</div>
+
+															<div class="profile-info-value">
+																<span class="editable" id="celular">{{celular}}</span>
+															</div>
+														</div>
+
+														<div class="profile-info-row">
+															<div class="profile-info-name"> Correo</div>
+
+															<div class="profile-info-value">
+																<span class="editable" id="correo">{{correo}}</span>
+															</div>
+														</div>
+
+														<div class="profile-info-row">
+															<div class="profile-info-name"> Ciudad</div>
+
+															<div class="profile-info-value">
+																<span class="editable" id="ciudad">{{ciudad}}</span>
+															</div>
+														</div>
+
+														<div class="profile-info-row">
+															<div class="profile-info-name"> Dirección</div>
+
+															<div class="profile-info-value">
+																<span class="editable" id="direccion">{{direccion}}</span>
+															</div>
+														</div>
+
+														<div class="profile-info-row">
+															<div class="profile-info-name"> Usuario</div>
+
+															<div class="profile-info-value">
+																<span class="editable" id="usuario">{{usuario}}</span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-xs-12 col-sm-3">
+													<div class="center">
+														<h4>CAMBIO CONTRASEÑA</h4>
+														<form class="form-horizontal" name="form_pass" id="form_pass">
+															<div class="form-group">
+																<label class="col-sm-6 control-label " for="actual">Contraseña Actual:</label>
+																<div class="col-sm-6">
+																	<input type="password" name="actual" id="actual" class="form-control" value="" min="1" />
+																</div>
+															</div>
+
+															<div class="form-group">
+																<label class="col-sm-6 control-label" for="nueva">Nueva Contraseña:</label>
+																<div class="col-sm-6">
+																	<input type="password" name="nueva" id="nueva" class="form-control" value="" min="1" />
+																</div>
+															</div>
+
+															<div class="form-group">
+																<label class="col-sm-6 control-label" for="confirme">Confirme Contraseña:</label>
+																<div class="col-sm-6">
+																	<input type="password" name="confirme" id="confirme" class="form-control" value="" min="1" />
+																</div>
+															</div>
+														</form>	
+
+														<button type="button" class="btn btn-sm btn-primary btn-white btn-round" id="btn_0" name="btn_0">
+															<i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
+															<span class="bigger-110">Cambiar</span>
+														</button>
+													</div>	
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<!-- </form> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+

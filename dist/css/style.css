@@ -1,0 +1,84 @@
+/**** Start Background Color ****/
+.azul {background: #28ABE3;}
+.verde {background: #72bf48;}
+.rojo {background: #FF432E;}
+.light-red {background: #FB6648;}
+.light-tomate {background: #FA6900;}
+.color {background: #0ECEAB;}
+.tomate{background: #ff9000;}
+.morado{background: #8b0189;}
+.gray{background: #5f5f5f;}
+.amarillo{background: #d0d204;}
+
+/**** Start Main Body Section ****/
+.mainbody-section {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.menu-item {
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.menu-item a {
+    color: #fff;
+    display: block;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.menu-item a p {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.menu-item:hover a {
+    text-decoration: none;
+    animation: wobble;
+    -webkit-animation: wobble;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+}
+
+@media only screen 
+and (min-width : 600px) 
+and (max-width : 991px) {
+    
+    .menu-item {
+        display: inline-block;
+        width: 32.8%;
+    }
+    
+    .menu-item.responsive {
+        width: 49.5%;
+        float: left;
+        margin-right: 3px;
+    }
+    
+    .menu-item.responsive-2 {
+        width: 49.5%;
+        float: right;
+    }
+}
+
+@media only screen 
+and (min-width : 992px) 
+and (max-width : 1199px) {
+    .menu-item {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    .menu-item a i {
+        font-size: 32px;
+    }
+    
+    .menu-item a p {
+        font-size: 16px;
+    }  
+}

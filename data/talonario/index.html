@@ -1,0 +1,140 @@
+<div class="main-content">	
+	<div class="main-content-inner">
+	    <div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+				try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="breadcrumb">
+				<li>
+					<i class="ace-icon fa fa-home home-icon"></i>
+					<a href="#/">Inicio</a>
+				</li>
+
+				<li class="active">Parametros</li>
+				<li class="active">Ingreso Talonario Retenciones</li>
+			</ul>
+		</div>
+
+	    <div class="page-content">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 widget-container-col">
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <div class="row">
+                            	<div class="control">
+				            		<div class="col-sm-3">
+										<div class="clearfix">
+											<span class="block input-icon input-icon-right">
+												<input type="text" name="buscador" id="buscador" class="form-control dimensiones" placeholder="Buscar....." onKeyUp="" />
+												<i class="ace-icon fa fa-search blue"></i>
+								            </span>
+										</div>
+									</div>
+
+									<button type="button" name="btn_abrir" id="btn_abrir" class="btn btn-pink posicion" data-toggle="modal" href="#myModal"><i class="fa fa-plus-circle"></i> NUEVO</button>
+								</div>
+								&nbsp;
+
+                                <table id="grid-table"></table>
+                                <div id="grid-pager"></div>
+                            </div>                                              
+                        </div>
+                    </div>
+                </div>
+            </div>                          
+        </div>
+	</div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+		        <div class="table-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						<span class="white">&times;</span>
+					</button>
+					AGREGAR REGISTRO
+				</div>
+				&nbsp;
+
+		        <div class="modal-body">
+		        	<form class="form-horizontal" name="form_registro" id="form_registro" autocomplete="off">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<div class="row">
+						        		<div class="form-group">
+											<label class="control-label col-sm-5 no-padding-right">Fecha Inicio:</label>
+											<div class="col-sm-6">
+												<div class="input-group">
+													<input type="text" name="fecha_inicio" id="fecha_inicio" class="form-control datepicker" />
+													<input type="hidden" name="id" id="id" class="form-control" />
+													<span class="input-group-addon">
+														<i class="ace-icon fa fa-calendar"></i>
+													</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-5 no-padding-right">Inicio Talonario:</label>
+											<div class="col-sm-6">
+												<div class="clearfix">
+													<input type="text" name="inicio_talonario" id="inicio_talonario" class="form-control" />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-5 no-padding-right">Autorización:</label>
+											<div class="col-sm-6">
+												<div class="clearfix">
+													<input type="text" name="autorizacion" id="autorizacion" class="form-control" />
+												</div>
+											</div>
+										</div>
+						        	</div>
+								</div>
+
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label class="control-label col-sm-5 no-padding-right">Fecha Caducidad:</label>
+										<div class="col-sm-6">
+											<div class="input-group">
+												<input type="text" name="fecha_caducidad" id="fecha_caducidad" class="form-control datepicker" />
+												<span class="input-group-addon">
+													<i class="ace-icon fa fa-calendar"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-sm-5 no-padding-right">Fin Talonario:</label>
+										<div class="col-sm-6">
+											<div class="clearfix">
+												<input type="text" name="finaliza_talonario" id="finaliza_talonario" class="form-control" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+		        </div>
+
+		        <div class="modal-footer no-margin-top">
+					<button type="button" class="btn btn-sm btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" title="Cerrar ventana">
+						<i class="ace-icon fa fa-times"></i>
+						Cerrar
+					</button>
+
+					<button type="button" name="btn_0" id="btn_0" class="btn btn-sm btn-primary pull-right" data-toggle="tooltip" title="Guardar Registro">
+						<i class="ace-icon fa fa-save"></i>
+						Guardar
+					</button>
+				</div>
+	      	</div>
+	    </div>
+	</div>	

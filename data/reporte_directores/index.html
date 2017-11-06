@@ -1,0 +1,312 @@
+<div class="main-content">	
+	<div class="main-content-inner">
+	    <div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+				try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="breadcrumb">
+				<li>
+					<i class="ace-icon fa fa-home home-icon"></i>
+					<a href="#/">Reportes</a>
+				</li>
+
+				<li class="active">Reporte Directores</li>
+			</ul>
+		</div>
+
+	    <div class="page-content">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="widget-box">
+						<div class="widget-body">
+							<div class="widget-main">
+								<div class="row">
+									<div class="col-xs-12">
+										<h3 class="header pink lighter smaller">
+											<i class="ace-icon fa fa-info smaller-90"></i>
+											Reporte Directores
+										</h3>
+
+										<div class="bigger-110">
+											<p>
+												<button class="btn btn-white btn-pink btn-sm" type="button" name="btn_abrir0" id="btn_abrir0" data-toggle="modal" href="#myModal">
+													<i class="ace-icon fa fa-file-pdf-o red2 bigger-110"></i>
+													TOTAL POR DIRECTOR
+												</button>
+											</p>
+
+											<p>
+												<button class="btn btn-white btn-pink btn-sm" type="button" name="btn_abrir1" id="btn_abrir1" id="btn_abrir0" data-toggle="modal" href="#myModal2">
+													<i class="ace-icon fa fa-file-pdf-o red2 bigger-110"></i>
+													FALTANTE DE PEDIDOS
+												</button>
+											</p>
+
+											<p>
+												<button class="btn btn-white btn-pink btn-sm" type="button" name="btn_abrir2" id="btn_abrir2" data-toggle="modal" href="#myModal3">
+													<i class="ace-icon fa fa-file-pdf-o red2 bigger-110"></i>
+													AGRUPADOS POR EMPRESARIO
+												</button>
+											</p>
+
+											<p>
+												<button class="btn btn-white btn-pink btn-sm" type="button" name="btn_abrir3" id="btn_abrir3" data-toggle="modal" href="#myModal4">
+													<i class="ace-icon fa fa-file-pdf-o red2 bigger-110"></i>
+													AGRUPADOS POR EMPRESARIO (FACTURAS)
+												</button>
+											</p>
+										</div>
+									</div>
+								</div>						
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal">
+    <div class="modal-dialog modal-sm">
+      	<div class="modal-content">
+	        <div class="table-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<span class="white">&times;</span>
+				</button>
+				Reporte
+			</div>
+        	<br />
+
+	        <form class="form-horizontal" name="form_registro1" id="form_registro1">
+	        	<div class="row">
+	        		<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="select_director1">Diretor:</label>
+						<div class="col-sm-7">
+							<select id="select_director1" name="select_director1" class="select2" data-placeholder="Diretor...">
+								<option value="">&nbsp;</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-4 no-padding-right">Fecha Inicio:</label>
+						<div class="col-sm-7">
+							<div class="input-group">
+								<input type="text" id="fecha_inicio" name="fecha_inicio" class="form-control datepicker" />
+								<span class="input-group-addon">
+									<i class="ace-icon fa fa-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-4 no-padding-right">Fecha Fin:</label>
+						<div class="col-sm-7">
+							<div class="input-group">
+								<input type="text" id="fecha_fin" name="fecha_fin" class="form-control datepicker" />
+								<span class="input-group-addon">
+									<i class="ace-icon fa fa-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+	        	</div>
+	        </form>
+	        
+			<br />
+	        <div class="modal-footer no-margin-top">
+				<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" title="Cerrar ventana">
+					<i class="ace-icon fa fa-times"></i>
+					Cerrar
+				</button>
+				<button name="btn_0" id="btn_0" class="btn btn-sm btn-success pull-right" data-toggle="tooltip" title="Generar Pdf">
+					<i class="ace-icon fa fa-check"></i>
+					Generar
+				</button>
+			</div>
+      	</div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal2">
+    <div class="modal-dialog modal-sm">
+      	<div class="modal-content">
+	        <div class="table-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<span class="white">&times;</span>
+				</button>
+				Reporte
+			</div>
+        	<br />
+
+	        <form class="form-horizontal" name="form_registro" id="form_registro">
+	        	<div class="row">
+					<div class="form-group">
+						<label class="control-label col-sm-4 no-padding-right">Fecha Inicio:</label>
+						<div class="col-sm-7">
+							<div class="input-group">
+								<input type="text" id="fecha_inicio1" name="fecha_inicio1" class="form-control datepicker" />
+								<span class="input-group-addon">
+									<i class="ace-icon fa fa-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-4 no-padding-right">Fecha Fin:</label>
+						<div class="col-sm-7">
+							<div class="input-group">
+								<input type="text" id="fecha_fin1" name="fecha_fin1" class="form-control datepicker" />
+								<span class="input-group-addon">
+									<i class="ace-icon fa fa-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+	        	</div>
+	        </form>
+	        
+			<br />
+	        <div class="modal-footer no-margin-top">
+				<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" title="Cerrar ventana">
+					<i class="ace-icon fa fa-times"></i>
+					Cerrar
+				</button>
+				<button name="btn_1" id="btn_1" class="btn btn-sm btn-success pull-right" data-toggle="tooltip" title="Generar Pdf">
+					<i class="ace-icon fa fa-check"></i>
+					Generar
+				</button>
+			</div>
+      	</div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal3">
+    <div class="modal-dialog modal-sm">
+      	<div class="modal-content">
+	        <div class="table-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<span class="white">&times;</span>
+				</button>
+				Reporte
+			</div>
+        	<br />
+
+	        <form class="form-horizontal" name="form_registro2" id="form_registro2">
+	        	<div class="row">
+	        		<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="select_director2">Diretor:</label>
+						<div class="col-sm-7">
+							<select id="select_director2" name="select_director2" class="select2" data-placeholder="Diretor...">
+								<option value="">&nbsp;</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-4 no-padding-right">Fecha Inicio:</label>
+						<div class="col-sm-7">
+							<div class="input-group">
+								<input type="text" id="fecha_inicio2" name="fecha_inicio2" class="form-control datepicker" />
+								<span class="input-group-addon">
+									<i class="ace-icon fa fa-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-4 no-padding-right">Fecha Fin:</label>
+						<div class="col-sm-7">
+							<div class="input-group">
+								<input type="text" id="fecha_fin2" name="fecha_fin2" class="form-control datepicker" />
+								<span class="input-group-addon">
+									<i class="ace-icon fa fa-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+	        	</div>
+	        </form>
+	        
+			<br />
+	        <div class="modal-footer no-margin-top">
+				<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" title="Cerrar ventana">
+					<i class="ace-icon fa fa-times"></i>
+					Cerrar
+				</button>
+				<button name="btn_2" id="btn_2" class="btn btn-sm btn-success pull-right" data-toggle="tooltip" title="Generar Pdf">
+					<i class="ace-icon fa fa-check"></i>
+					Generar
+				</button>
+			</div>
+      	</div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal4">
+    <div class="modal-dialog modal-sm">
+      	<div class="modal-content">
+	        <div class="table-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<span class="white">&times;</span>
+				</button>
+				Reporte
+			</div>
+        	<br />
+
+	        <form class="form-horizontal" name="form_registro3" id="form_registro3">
+	        	<div class="row">
+	        		<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="select_director3">Diretor:</label>
+						<div class="col-sm-7">
+							<select id="select_director3" name="select_director3" class="select2" data-placeholder="Diretor...">
+								<option value="">&nbsp;</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-4 no-padding-right">Fecha Inicio:</label>
+						<div class="col-sm-7">
+							<div class="input-group">
+								<input type="text" id="fecha_inicio3" name="fecha_inicio3" class="form-control datepicker" />
+								<span class="input-group-addon">
+									<i class="ace-icon fa fa-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-4 no-padding-right">Fecha Fin:</label>
+						<div class="col-sm-7">
+							<div class="input-group">
+								<input type="text" id="fecha_fin3" name="fecha_fin3" class="form-control datepicker" />
+								<span class="input-group-addon">
+									<i class="ace-icon fa fa-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+	        	</div>
+	        </form>
+	        
+			<br />
+	        <div class="modal-footer no-margin-top">
+				<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" title="Cerrar ventana">
+					<i class="ace-icon fa fa-times"></i>
+					Cerrar
+				</button>
+				<button name="btn_3" id="btn_3" class="btn btn-sm btn-success pull-right" data-toggle="tooltip" title="Generar Pdf">
+					<i class="ace-icon fa fa-check"></i>
+					Generar
+				</button>
+			</div>
+      	</div>
+    </div>
+</div>
